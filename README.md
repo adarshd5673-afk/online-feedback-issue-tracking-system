@@ -87,7 +87,7 @@ project-folder
 **Adarsh Dubey**
 
 B.Tech Artificial Intelligence and Data Science  
-MIT Squallia
+MITS GWL
 
 ---
 
