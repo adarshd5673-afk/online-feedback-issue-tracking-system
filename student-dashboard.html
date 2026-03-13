@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Dashboard | Unified Learning Hub</title>
+    <meta
+      name="description"
+      content="Student complaint and feedback dashboard for Unified Learning Hub."
+    />
+    <link rel="stylesheet" href="student-dashboard.css" />
+  </head>
+
+  <body>
+    <div class="appShell">
+      <header class="appHeader">
+        <div class="brandCluster">
+          <div class="brandLogo" aria-hidden="true">
+            <span>UL</span>
+          </div>
+          <div class="brandText">
+            <h1>Unified Learning Hub</h1>
+            <p>Student Attendance &amp; Support Portal</p>
+          </div>
+        </div>
+
+        <div class="headerRight">
+          <div class="headerBadge">Student Portal</div>
+          <div class="headerUser">
+            <div class="headerUserAvatar">A</div>
+            <span>Logged in as Student</span>
+          </div>
+        </div>
+      </header>
+
+      <div class="appBody">
+        <aside class="sidebar">
+          <div>
+            <div class="sidebarSectionLabel">Navigation</div>
+            <ul class="navList" id="studentSidebarNav">
+              <li class="navItem">
+                <button
+                  type="button"
+                  class="navLink navLinkActive"
+                  data-page="dashboard"
+                >
+                  <span class="navLinkIcon">🏠</span>
+                  <span class="navLinkLabel">Dashboard</span>
+                </button>
+              </li>
+              <li class="navItem">
+                <button
+                  type="button"
+                  class="navLink"
+                  data-page="file-complaint"
+                >
+                  <span class="navLinkIcon">📝</span>
+                  <span class="navLinkLabel">File Complaint</span>
+                </button>
+              </li>
+              <li class="navItem">
+                <button
+                  type="button"
+                  class="navLink"
+                  data-page="your-complaints"
+                >
+                  <span class="navLinkIcon">📂</span>
+                  <span class="navLinkLabel">Your Complaints</span>
+                </button>
+              </li>
+              <li class="navItem">
+                <button type="button" class="navLink" data-page="feedback">
+                  <span class="navLinkIcon">💬</span>
+                  <span class="navLinkLabel">Give Feedback</span>
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          <div class="navFooter">
+            <div>Session: Jan – Jun 2026</div>
+            <div>Student Dashboard</div>
+          </div>
+        </aside>
+
+        <main class="main">
+          <!-- Dashboard page -->
+          <section class="page pageActive" id="page-dashboard">
+            <div class="pageHeader">
+              <div class="pageTitle">
+                <h2>Welcome back, Student!</h2>
+                <p>Overview of your support &amp; maintenance complaints.</p>
+              </div>
+              <span class="pageTag">Dashboard</span>
+            </div>
+
+            <div class="cardsRow">
+              <article class="card">
+                <div class="cardHeaderRow">
+                  <span>Total Complaints</span>
+                  <span class="cardPill cardPillBlue">All time</span>
+                </div>
+                <div class="cardMetric">
+                  <span>12</span>
+                  <span>submitted</span>
+                </div>
+                <div class="cardProgressTrack">
+                  <div class="cardProgressFill cardProgressFillBlue"></div>
+                </div>
+              </article>
+
+              <article class="card">
+                <div class="cardHeaderRow">
+                  <span>Resolved</span>
+                  <span class="cardPill cardPillGreen">Closed</span>
+                </div>
+                <div class="cardMetric">
+                  <span>7</span>
+                  <span>issues resolved</span>
+                </div>
+                <div class="cardProgressTrack">
+                  <div class="cardProgressFill cardProgressFillGreen"></div>
+                </div>
+              </article>
+
+              <article class="card">
+                <div class="cardHeaderRow">
+                  <span>Pending</span>
+                  <span class="cardPill cardPillAmber">Open</span>
+                </div>
+                <div class="cardMetric">
+                  <span>5</span>
+                  <span>awaiting action</span>
+                </div>
+                <div class="cardProgressTrack">
+                  <div class="cardProgressFill cardProgressFillAmber"></div>
+                </div>
+              </article>
+            </div>
+
+            <section class="sectionBlock">
+              <div class="sectionBlockHeader">
+                <div>
+                  <h3>Recent Complaints</h3>
+                  <span>Latest support issues you have filed.</span>
+                </div>
+                <a href="#" class="linkButton">View all</a>
+              </div>
+
+              <div style="overflow-x: auto;">
+                <table aria-label="Recent complaints">
+                  <thead>
+                    <tr>
+                      <th>Complaint ID</th>
+                      <th>Title</th>
+                      <th>Category</th>
+                      <th>Date</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>#C-1042</td>
+                      <td>Projector not working</td>
+                      <td>Lab</td>
+                      <td>09 Mar 2026</td>
+                      <td>
+                        <span class="statusBadge statusProgress">
+                          <span class="statusDot"></span>
+                          In Progress
+                        </span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>#C-1037</td>
+                      <td>Wi‑Fi down in Block B</td>
+                      <td>Network</td>
+                      <td>07 Mar 2026</td>
+                      <td>
+                        <span class="statusBadge statusPending">
+                          <span class="statusDot"></span>
+                          Pending
+                        </span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>#C-1021</td>
+                      <td>Lights flickering</td>
+                      <td>Electricity</td>
+                      <td>28 Feb 2026</td>
+                      <td>
+                        <span class="statusBadge statusResolved">
+                          <span class="statusDot"></span>
+                          Resolved
+                        </span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+          </section>
+
+          <!-- File complaint page -->
+          <section class="page" id="page-file-complaint">
+            <div class="pageHeader">
+              <div class="pageTitle">
+                <h2>File a Complaint</h2>
+                <p>Report any issue related to labs, network, electricity and more.</p>
+              </div>
+              <span class="pageTag">New complaint</span>
+            </div>
+
+            <section class="formCard">
+              <form id="fileComplaintForm" novalidate>
+                <div class="formRow">
+                  <div>
+                    <label for="complaintTitle">Complaint Title</label>
+                    <input
+                      id="complaintTitle"
+                      name="title"
+                      type="text"
+                      placeholder="Short summary (e.g. Wi‑Fi not working in CS Lab)"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="formRow formRowTwo">
+                  <div>
+                    <label for="complaintCategory">Category</label>
+                    <select id="complaintCategory" name="category" required>
+                      <option value="" disabled selected>Select a category</option>
+                      <option value="lab">Lab</option>
+                      <option value="network">Network</option>
+                      <option value="electricity">Electricity</option>
+                      <option value="bathroom">Bathroom</option>
+                      <option value="infrastructure">Infrastructure</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label for="complaintImage">Upload Image (optional)</label>
+                    <input
+                      id="complaintImage"
+                      name="image"
+                      type="file"
+                      accept="image/*"
+                    />
+                  </div>
+                </div>
+
+                <div class="formRow">
+                  <div>
+                    <label for="complaintDescription">Description</label>
+                    <textarea
+                      id="complaintDescription"
+                      name="description"
+                      placeholder="Describe the issue in detail, including location, time, and any other useful information."
+                      required
+                    ></textarea>
+                  </div>
+                </div>
+
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    gap: 12px;
+                  "
+                >
+                  <p class="mutedText">
+                    This is a front‑end preview only. Data will not actually be
+                    submitted.
+                  </p>
+                  <button class="primaryButton" type="submit">
+                    <span>Submit Complaint</span>
+                  </button>
+                </div>
+              </form>
+            </section>
+          </section>
+
+          <!-- Your complaints page -->
+          <section class="page" id="page-your-complaints">
+            <div class="pageHeader">
+              <div class="pageTitle">
+                <h2>Your Complaints</h2>
+                <p>Track every complaint you have raised so far.</p>
+              </div>
+              <span class="pageTag">History</span>
+            </div>
+
+            <section class="sectionBlock">
+              <div class="sectionBlockHeader">
+                <div>
+                  <h3>All Complaints</h3>
+                  <span>Use status badges to quickly see current state.</span>
+                </div>
+              </div>
+
+              <div style="overflow-x: auto;">
+                <table aria-label="Your complaints">
+                  <thead>
+                    <tr>
+                      <th>Complaint ID</th>
+                      <th>Category</th>
+                      <th>Date</th>
+                      <th>Status</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>#C-1042</td>
+                      <td>Lab</td>
+                      <td>09 Mar 2026</td>
+                      <td>
+                        <span class="statusBadge statusProgress">
+                          <span class="statusDot"></span>
+                          In Progress
+                        </span>
+                      </td>
+                      <td>
+                        <a href="#" class="linkButton">View details</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>#C-1037</td>
+                      <td>Network</td>
+                      <td>07 Mar 2026</td>
+                      <td>
+                        <span class="statusBadge statusPending">
+                          <span class="statusDot"></span>
+                          Pending
+                        </span>
+                      </td>
+                      <td>
+                        <a href="#" class="linkButton">View details</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>#C-1021</td>
+                      <td>Electricity</td>
+                      <td>28 Feb 2026</td>
+                      <td>
+                        <span class="statusBadge statusResolved">
+                          <span class="statusDot"></span>
+                          Resolved
+                        </span>
+                      </td>
+                      <td>
+                        <a href="#" class="linkButton">View details</a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+          </section>
+
+          <!-- Feedback page -->
+          <section class="page" id="page-feedback">
+            <div class="pageHeader">
+              <div class="pageTitle">
+                <h2>Give Feedback</h2>
+                <p>Share suggestions to improve college facilities and support.</p>
+              </div>
+              <span class="pageTag">Feedback</span>
+            </div>
+
+            <section class="formCard">
+              <form id="feedbackForm" novalidate>
+                <div class="formRow">
+                  <div>
+                    <label for="feedbackSubject">Subject</label>
+                    <input
+                      id="feedbackSubject"
+                      name="subject"
+                      type="text"
+                      placeholder="Short subject (e.g. Improve lab timings)"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="formRow">
+                  <div>
+                    <label for="feedbackMessage">Message</label>
+                    <textarea
+                      id="feedbackMessage"
+                      name="message"
+                      placeholder="Share your detailed feedback or suggestions."
+                      required
+                    ></textarea>
+                  </div>
+                </div>
+
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    gap: 12px;
+                  "
+                >
+                  <p class="mutedText">
+                    This is a front‑end only form. Submissions are not stored yet.
+                  </p>
+                  <button class="primaryButton" type="submit">
+                    <span>Submit Feedback</span>
+                  </button>
+                </div>
+              </form>
+            </section>
+          </section>
+        </main>
+      </div>
+
+      <footer class="appFooter">
+        <div>&copy; 2026 Unified Learning Hub. All rights reserved.</div>
+        <div>
+          Built for practice. Not an official system.
+        </div>
+      </footer>
+    </div>
+
+    <script src="student-dashboard.js"></script>
+  </body>
+</html>
+

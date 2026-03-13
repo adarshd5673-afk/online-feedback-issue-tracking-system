@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard | Unified Learning Hub</title>
+    <meta
+      name="description"
+      content="Admin complaint management dashboard for Unified Learning Hub."
+    />
+    <link rel="stylesheet" href="admin-dashboard.css" />
+  </head>
+
+  <body>
+    <div class="appShell">
+      <header class="appHeader">
+        <div class="brandCluster">
+          <div class="brandLogo" aria-hidden="true">
+            <span>UL</span>
+          </div>
+          <div class="brandText">
+            <h1>Unified Learning Hub</h1>
+            <p>Admin Complaints Console</p>
+          </div>
+        </div>
+
+        <div class="headerRight">
+          <div class="headerBadge">Admin Portal</div>
+          <div class="headerUser">
+            <div class="headerUserAvatar">AD</div>
+            <span>Logged in as Admin</span>
+          </div>
+        </div>
+      </header>
+
+      <div class="appBody">
+        <aside class="sidebar">
+          <div>
+            <div class="sidebarSectionLabel">Admin navigation</div>
+            <ul class="navList" id="adminSidebarNav">
+              <li class="navItem">
+                <button
+                  type="button"
+                  class="navLink navLinkActive"
+                  data-page="dashboard"
+                >
+                  <span class="navLinkIcon">📊</span>
+                  <span class="navLinkLabel">Dashboard</span>
+                </button>
+              </li>
+              <li class="navItem">
+                <button
+                  type="button"
+                  class="navLink"
+                  data-page="complaints"
+                >
+                  <span class="navLinkIcon">🛠</span>
+                  <span class="navLinkLabel">Complaints</span>
+                </button>
+              </li>
+              <li class="navItem">
+                <button type="button" class="navLink" disabled>
+                  <span class="navLinkIcon">👤</span>
+                  <span class="navLinkLabel">Users (coming soon)</span>
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          <div class="navFooter">
+            <div>Session: Jan – Jun 2026</div>
+            <div>Admin Dashboard</div>
+          </div>
+        </aside>
+
+        <main class="main">
+          <!-- Admin dashboard home -->
+          <section class="page pageActive" id="admin-page-dashboard">
+            <div class="pageHeader">
+              <div class="pageTitle">
+                <h2>Complaints Overview</h2>
+                <p>High-level status of all student complaints.</p>
+              </div>
+              <span class="pageTag">Dashboard</span>
+            </div>
+
+            <div class="cardsRow">
+              <article class="card">
+                <div class="cardHeaderRow">
+                  <span>Total Complaints</span>
+                  <span class="cardPill cardPillBlue">All time</span>
+                </div>
+                <div class="cardMetric">
+                  <span>132</span>
+                  <span>records</span>
+                </div>
+                <div class="cardProgressTrack">
+                  <div class="cardProgressFill cardProgressFillBlue"></div>
+                </div>
+              </article>
+
+              <article class="card">
+                <div class="cardHeaderRow">
+                  <span>Pending</span>
+                  <span class="cardPill cardPillAmber">Open</span>
+                </div>
+                <div class="cardMetric">
+                  <span>24</span>
+                  <span>awaiting action</span>
+                </div>
+                <div class="cardProgressTrack">
+                  <div class="cardProgressFill cardProgressFillAmber"></div>
+                </div>
+              </article>
+
+              <article class="card">
+                <div class="cardHeaderRow">
+                  <span>Resolved</span>
+                  <span class="cardPill cardPillGreen">Closed</span>
+                </div>
+                <div class="cardMetric">
+                  <span>86</span>
+                  <span>successfully handled</span>
+                </div>
+                <div class="cardProgressTrack">
+                  <div class="cardProgressFill cardProgressFillGreen"></div>
+                </div>
+              </article>
+            </div>
+
+            <section class="sectionBlock">
+              <div class="sectionBlockHeader">
+                <div>
+                  <h3>Recent Complaints</h3>
+                  <span>Latest complaints across all students.</span>
+                </div>
+                <button type="button" class="linkButton">View all</button>
+              </div>
+
+              <div style="overflow-x: auto;">
+                <table aria-label="Recent complaints (admin)">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Student</th>
+                      <th>Category</th>
+                      <th>Date</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>#C-1204</td>
+                      <td>Adarsh Dubey</td>
+                      <td>Network</td>
+                      <td>09 Mar 2026</td>
+                      <td>
+                        <span class="statusBadge statusPending">
+                          <span class="statusDot"></span>
+                          Pending
+                        </span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>#C-1198</td>
+                      <td>Riya Sharma</td>
+                      <td>Lab</td>
+                      <td>08 Mar 2026</td>
+                      <td>
+                        <span class="statusBadge statusProgress">
+                          <span class="statusDot"></span>
+                          In Progress
+                        </span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>#C-1191</td>
+                      <td>Rahul Verma</td>
+                      <td>Electricity</td>
+                      <td>05 Mar 2026</td>
+                      <td>
+                        <span class="statusBadge statusResolved">
+                          <span class="statusDot"></span>
+                          Resolved
+                        </span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+          </section>
+
+          <!-- Complaints management -->
+          <section class="page" id="admin-page-complaints">
+            <div class="pageHeader">
+              <div class="pageTitle">
+                <h2>Complaints Management</h2>
+                <p>Review, update, and manage all submitted complaints.</p>
+              </div>
+              <span class="pageTag">Complaints</span>
+            </div>
+
+            <section class="sectionBlock">
+              <div class="sectionBlockHeader">
+                <div>
+                  <h3>All Complaints</h3>
+                  <span>Change status or inspect details quickly.</span>
+                </div>
+              </div>
+
+              <div style="overflow-x: auto;">
+                <table aria-label="Complaints management">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Student</th>
+                      <th>Category</th>
+                      <th>Date</th>
+                      <th>Status</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody id="adminComplaintsTableBody">
+                    <tr data-status="submitted">
+                      <td>#C-1204</td>
+                      <td>Adarsh Dubey</td>
+                      <td>Network</td>
+                      <td>09 Mar 2026</td>
+                      <td>
+                        <span class="statusBadge statusSubmitted">
+                          <span class="statusDot"></span>
+                          Submitted
+                        </span>
+                      </td>
+                      <td>
+                        <div class="tableActions">
+                          <button type="button" class="linkButton">View</button>
+                          <select class="statusSelect">
+                            <option value="submitted" selected>Submitted</option>
+                            <option value="in-progress">In Progress</option>
+                            <option value="resolved">Resolved</option>
+                          </select>
+                          <button type="button" class="linkButton dangerLink">
+                            Delete
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr data-status="in-progress">
+                      <td>#C-1198</td>
+                      <td>Riya Sharma</td>
+                      <td>Lab</td>
+                      <td>08 Mar 2026</td>
+                      <td>
+                        <span class="statusBadge statusProgress">
+                          <span class="statusDot"></span>
+                          In Progress
+                        </span>
+                      </td>
+                      <td>
+                        <div class="tableActions">
+                          <button type="button" class="linkButton">View</button>
+                          <select class="statusSelect">
+                            <option value="submitted">Submitted</option>
+                            <option value="in-progress" selected>In Progress</option>
+                            <option value="resolved">Resolved</option>
+                          </select>
+                          <button type="button" class="linkButton dangerLink">
+                            Delete
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr data-status="resolved">
+                      <td>#C-1191</td>
+                      <td>Rahul Verma</td>
+                      <td>Electricity</td>
+                      <td>05 Mar 2026</td>
+                      <td>
+                        <span class="statusBadge statusResolved">
+                          <span class="statusDot"></span>
+                          Resolved
+                        </span>
+                      </td>
+                      <td>
+                        <div class="tableActions">
+                          <button type="button" class="linkButton">View</button>
+                          <select class="statusSelect">
+                            <option value="submitted">Submitted</option>
+                            <option value="in-progress">In Progress</option>
+                            <option value="resolved" selected>Resolved</option>
+                          </select>
+                          <button type="button" class="linkButton dangerLink">
+                            Delete
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+          </section>
+        </main>
+      </div>
+
+      <footer class="appFooter">
+        <div>&copy; 2026 Unified Learning Hub. Admin console.</div>
+        <div>Frontend mock only – no real data is modified.</div>
+      </footer>
+    </div>
+
+    <script src="admin-dashboard.js"></script>
+  </body>
+</html>
+
