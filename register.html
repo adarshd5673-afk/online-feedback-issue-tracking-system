@@ -1,0 +1,116 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register | Unified Learning Hub</title>
+  <meta name="description" content="Create an account on OFITS" />
+  <link rel="stylesheet" href="register.css">
+</head>
+
+<body>
+  <main class="page">
+    <section class="card" aria-label="Register">
+
+      <header class="cardHeader">
+        <div class="brand">
+          <img src="mits.png" alt="College Logo" class="college-logo">
+          <div>
+            <h1>Create your account</h1>
+            <p class="subtitle">MITS Gwalior</p>
+          </div>
+        </div>
+      </header>
+
+      <div class="cardBody">
+        <form id="registerForm" method="post">
+
+          <!-- NAME -->
+          <div id="nameField" class="formField">
+            <label for="name">Name</label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              autocomplete="name"
+              placeholder="Your full name"
+              required
+            />
+            <div class="error"></div>
+          </div>
+
+          <!-- EMAIL -->
+          <div id="emailField" class="formField">
+            <label for="email">Email</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              placeholder="Enter your college email"
+              required
+            />
+            <div class="error"></div>
+          </div>
+
+          <!-- PASSWORD ROW -->
+          <div class="row">
+
+            <div id="passwordField" class="formField">
+              <label for="password">Password</label>
+              <input
+                id="password"
+                name="password"
+                type="password"
+                autocomplete="new-password"
+                placeholder="Create a password"
+                required
+                minlength="6"
+              />
+              <div class="error"></div>
+            </div>
+
+            <div id="confirmPasswordField" class="formField">
+              <label for="confirmPassword">Confirm Password</label>
+              <input
+                id="confirmPassword"
+                name="confirmPassword"
+                type="password"
+                autocomplete="new-password"
+                placeholder="Repeat password"
+                required
+                minlength="6"
+              />
+              <div class="error"></div>
+            </div>
+
+          </div>
+
+          <!-- ROLE -->
+          <div id="roleField" class="formField">
+            <label for="role">Register as...</label>
+            <select id="role" name="role" required>
+              <option value="" selected disabled>Select your role</option>
+              <option value="student">Student</option>
+              <option value="admin">Admin</option>
+            </select>
+            <div class="error"></div>
+          </div>
+
+          <button class="button" type="submit">Register</button>
+
+          <p class="footer">
+            <span>Already have an account?</span>
+            <a href="login.html">Back to login</a>
+          </p>
+
+        </form>
+      </div>
+
+    </section>
+  </main>
+
+  <script src="register.js"></script>
+</body>
+</html>

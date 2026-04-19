@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+  <meta name="description" content="Login to Unified Learning Hub" />
+  <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+  <main class="page">
+    <section class="card" aria-label="Login">
+
+      <header class="cardHeader">
+        <div class="brand">
+          <img src="mits.png" alt="College Logo" class="college-logo">
+          <div>
+            <h1>Login to OFITS</h1>
+            <p class="subtitle">MITS Gwalior</p>
+          </div>
+        </div>
+      </header>
+
+      <div class="cardBody">
+        <form id="loginForm" action="#" method="post">
+
+          <!-- EMAIL FIELD -->
+          <div id="emailField" class="formField">
+            <label for="email">Email</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              placeholder="Enter your college email"
+              required
+            />
+            <div class="error"></div>
+          </div>
+
+          <!-- PASSWORD FIELD -->
+          <div id="passwordField" class="formField">
+            <label for="password">Password</label>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              autocomplete="current-password"
+              placeholder="Enter your password"
+              required
+              minlength="6"
+            />
+            <div class="error"></div>
+          </div>
+
+          <!-- ROLE FIELD -->
+          <!-- <div id="roleField" class="formField">
+            <label for="role">You are...</label>
+            <select id="role" name="role" required>
+              <option value="" disabled selected>Student/Admin</option>
+              <option value="student">Student</option>
+              <option value="admin">Admin</option>
+            </select>
+            <div class="error"></div>
+          </div> -->
+
+          <button class="button" type="submit">Login</button>
+
+          <p class="footer">
+            <span>New here?</span>
+            <a href="register.html">Create an account</a>
+          </p>
+
+        </form>
+      </div>
+
+    </section>
+  </main>
+
+  <script src="login.js"></script>
+</body>
+</html>

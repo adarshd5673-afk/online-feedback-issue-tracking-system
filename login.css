@@ -1,0 +1,241 @@
+
+      :root {
+        color-scheme: light;
+        --bg0: #0b1220;
+        --bg1: #0f1a33;
+        --card: rgba(255, 255, 255, 0.08);
+        --cardBorder: rgba(255, 255, 255, 0.14);
+        --text: rgba(255, 255, 255, 0.92);
+        --muted: rgba(255, 255, 255, 0.7);
+        --inputBg: rgba(255, 255, 255, 0.06);
+        --inputBorder: rgba(255, 255, 255, 0.18);
+        --focus: rgba(99, 102, 241, 0.55);
+        --primary0: #6366f1;
+        --primary1: #22c55e;
+        --danger: #ef4444;
+        --radius: 16px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        height: 100%;
+      }
+
+      body {
+        margin: 0;
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+          Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+        color: var(--text);
+        background: radial-gradient(
+            1200px 700px at 10% 15%,
+            rgba(99, 102, 241, 0.28),
+            rgba(99, 102, 241, 0) 55%
+          ),
+          radial-gradient(
+            900px 600px at 90% 25%,
+            rgba(34, 197, 94, 0.18),
+            rgba(34, 197, 94, 0) 55%
+          ),
+          linear-gradient(160deg, var(--bg0), var(--bg1));
+      }
+
+      .page {
+        min-height: 100%;
+        display: grid;
+        place-items: center;
+        padding: 28px 18px;
+      }
+
+      .card {
+        width: min(440px, 100%);
+        border-radius: var(--radius);
+        background: var(--card);
+        border: 1px solid var(--cardBorder);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        overflow: hidden;
+      }
+
+      .cardHeader {
+        padding: 22px 22px 10px 22px;
+      }
+
+      .brand {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+
+      /* .logo {
+        width: 40px;
+        height: 40px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, var(--primary0), var(--primary1));
+        box-shadow: 0 8px 20px rgba(99, 102, 241, 0.25);
+      } */
+       .college-logo {
+        width: 65px;
+        height: 65px;
+        object-fit: contain;
+        border-radius: 10px; /* optional */
+        }   
+
+      h1 {
+        margin: 0;
+        font-size: 20px;
+        letter-spacing: -0.02em;
+      }
+
+      .subtitle {
+        margin: 10px 0 0 0;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.45;
+      }
+
+      .cardBody {
+        padding: 14px 22px 22px 22px;
+      }
+      .formField{
+  margin-bottom:16px;
+  display:flex;
+  flex-direction:column;
+}
+
+.error{
+  color:red;
+  font-size:13px;
+  margin-top:4px;
+}
+
+.hasError input,
+.hasError select{
+  border:1px solid red;
+}
+      form {
+        display: grid;
+        gap: 14px;
+      }
+
+      label {
+        display: grid;
+        gap: 7px;
+        font-size: 13px;
+        color: var(--muted);
+      }
+
+      input,
+      select,
+      button {
+        font: inherit;
+      }
+
+      input,
+      select {
+        width: 100%;
+        padding: 12px 12px;
+        border-radius: 12px;
+        border: 1px solid var(--inputBorder);
+        background: var(--inputBg);
+        color: var(--text);
+        outline: none;
+        transition: border-color 140ms ease, box-shadow 140ms ease,
+          transform 140ms ease;
+      }
+
+      select option {
+        color: #0b1220;
+      }
+
+      input::placeholder {
+        color: rgba(255, 255, 255, 0.45);
+      }
+
+      input:focus,
+      select:focus {
+        border-color: rgba(99, 102, 241, 0.65);
+        box-shadow: 0 0 0 4px var(--focus);
+      }
+
+      .row {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .button {
+        margin-top: 2px;
+        padding: 12px 14px;
+        border: 0;
+        border-radius: 12px;
+        cursor: pointer;
+        color: white;
+        font-weight: 650;
+        letter-spacing: 0.01em;
+        background: linear-gradient(135deg, var(--primary0), var(--primary1));
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
+        transition: transform 120ms ease, filter 120ms ease, box-shadow 120ms ease;
+      }
+
+      .button:hover {
+        filter: brightness(1.04);
+        box-shadow: 0 14px 38px rgba(0, 0, 0, 0.33);
+      }
+
+      .button:active {
+        transform: translateY(1px);
+      }
+
+      .button:focus-visible {
+        outline: none;
+        box-shadow: 0 0 0 4px var(--focus), 0 14px 38px rgba(0, 0, 0, 0.33);
+      }
+
+      .footer {
+        margin-top: 6px;
+        display: flex;
+        justify-content: center;
+        gap: 6px;
+        font-size: 13px;
+        color: var(--muted);
+      }
+
+      a {
+        color: rgba(255, 255, 255, 0.92);
+        text-decoration: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+        padding-bottom: 1px;
+      }
+
+      a:hover {
+        border-bottom-color: rgba(255, 255, 255, 0.65);
+      }
+
+      .srOnly {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      @media (min-width: 520px) {
+        .cardHeader {
+          padding: 26px 26px 10px 26px;
+        }
+        .cardBody {
+          padding: 14px 26px 26px 26px;
+        }
+        h1 {
+          font-size: 22px;
+        }
+      }
