@@ -134,8 +134,6 @@ Student Dashboard
 
 ## 🔐 Future Improvements
 
-* JWT Authentication
-* Role-based access control
 * Email notifications
 * Better UI/UX
 * Deployment (Render / Vercel)
