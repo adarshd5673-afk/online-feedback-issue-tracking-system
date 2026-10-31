@@ -31,8 +31,10 @@ const userSchema = new mongoose.Schema({
 const User = mongoose.model("User", userSchema);
 
 const complaintSchema = new mongoose.Schema({
-  userId: String,
-  name: String,
+  userId: { 
+    type: mongoose.Schema.Types.ObjectId, 
+    ref: "User"   
+  },
   title: String,
   category: String,
   description: String,
@@ -87,16 +89,16 @@ app.post("/register", async (req, res) => {
 
 app.post("/complaint", authMiddleware, async (req, res) => { //complain submit krne ke liye
   try {
+
+    console.log("Complaint submitted by:", req.user);
     const { title, category, description } = req.body;
 
     const newComplaint = new Complaint({
-      userId: req.user.id,
-      name: req.user.name, // JWT me name bhejna padega
+      userId: req.user.id,   // correct ObjectId
       title,
       category,
       description
-    });
-
+});
     await newComplaint.save();
 
     res.json({ message: "Complaint submitted successfully" });
@@ -163,22 +165,31 @@ app.post("/login", async (req, res) => {
   }
 });
 
-app.get("/complaints", authMiddleware, async (req, res) => { //Get all complaints to admin
+app.get("/complaints", authMiddleware, async (req, res) => {
 
   if (req.user.role !== "admin") {
     return res.status(403).json({ message: "Access denied" });
   }
 
   const complaints = await Complaint.find()
-    .populate("userId", "name"); //  important
+    .populate("userId", "name"); // 🔥 now works
 
   res.json(complaints);
 });
 
-app.get("/my-complaints", authMiddleware, async (req, res) => { //Logged-in student ko sirf uske complaints return karega
-  try {                                                         //Same data dashboard + your complaints dono me use hoga
-    const complaints = await Complaint.find({ userId: req.user.id });
+app.get("/my-complaints", authMiddleware, async (req, res) => {
+  try {
+
+    console.log("Complaints requested by:", req.user);
+
+    const complaints = await Complaint.find({
+      userId: req.user.id
+    });
+
+    console.log("Complaints found:", complaints);
+
     res.json(complaints);
+
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
